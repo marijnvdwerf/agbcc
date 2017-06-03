@@ -10,6 +10,7 @@ addons:
       - linux-libc-dev
       - ninja
       - clang-3.6
+      - cmake
       
 cache:
   apt: true
