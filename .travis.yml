@@ -5,18 +5,20 @@ dist: trusty
 sudo: false
 addons:
   apt:
+    sources:
+      - llvm-toolchain-trusty
     packages:
       - gcc-multilib
       - linux-libc-dev
       - ninja
-      - clang-3.6
+      - clang-5.0
       - cmake
       
 cache:
   apt: true
 script:
-  - export CC=/usr/bin/clang-3.6
-  - export CXX=/usr/bin/clang++-3.6
+  - export CC=/usr/bin/clang-5.0
+  - export CXX=/usr/bin/clang++-5.0
   - cd $TRAVIS_BUILD_DIR
   - mkdir build
   - cd build
