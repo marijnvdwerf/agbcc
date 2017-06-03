@@ -10,20 +10,21 @@ addons:
     packages:
       - gcc-multilib
       - linux-libc-dev
-      - ninja
+      - ninja-build
       - clang-5.0
       - cmake
       
 cache:
   apt: true
 install:
+  - ninja --version
   - mkdir .tmp
   - curl -L https://github.com/ninja-build/ninja/releases/download/v1.7.2/ninja-linux.zip -o .tmp/ninja-linux.zip
   - unzip .tmp/ninja-linux.zip -d .tmp
 before_script:
   - export PATH=$PATH:$PWD/.tmp
 script:
-  
+  - ninja --version
   - export CC=/usr/bin/clang-5.0
   - export CXX=/usr/bin/clang++-5.0
   - cd $TRAVIS_BUILD_DIR
