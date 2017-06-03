@@ -22,4 +22,4 @@ script:
   - cd build
   - cmake .. -GNinja
   - ninja
-  - cat CMakeFiles/*.log
+  - find . -name "*.txt" -exec echo "# {}" \; -exec cat "{}" \;
