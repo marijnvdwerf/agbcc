@@ -8,6 +8,7 @@ addons:
     sources:
       - llvm-toolchain-trusty
     packages:
+      - gcc-multilib
       - clang-5.0
       - cmake
       
